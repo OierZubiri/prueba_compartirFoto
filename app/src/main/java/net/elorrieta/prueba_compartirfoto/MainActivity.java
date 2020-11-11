@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
 			// display error state to the user
 		}
 	}
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
