@@ -11,6 +11,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 			oBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
 			stream.close();
 
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -87,12 +89,16 @@ public class MainActivity extends AppCompatActivity {
 		if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
 			Bundle extras =     data.getExtras();
 			oBitmap =           (Bitmap) extras.get("data");// Obtener el bitmap.
-			imageView.setImageBitmap(oBitmap); // Mostrar la imagen en el ImageView
+			// Probar a convertir la imagen en String y Bitmap para poder enviar.
+			String sBase64 = ImageUtilBase64.convert(oBitmap);
+			Bitmap bitmap = ImageUtilBase64.convert(sBase64);
+			imageView.setImageBitmap(bitmap); // Mostrar la imagen en el ImageView
 			guardarFoto();  // Guardarlo en la cache.
 		}
-
-
 	}
+
+
+
 
 
 

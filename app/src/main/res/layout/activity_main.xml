@@ -24,11 +24,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:onClick="cargarFoto"
-        android:text="Button"
+        android:text="Sacar foto"
         app:layout_constraintEnd_toEndOf="@+id/targetImage"
         app:layout_constraintStart_toStartOf="@+id/targetImage"
-        app:layout_constraintTop_toBottomOf="@+id/targetImage"
-        tools:text="Cargar foto" />
+        app:layout_constraintTop_toBottomOf="@+id/targetImage" />
 
     <Button
         android:id="@+id/botonCompartir"
